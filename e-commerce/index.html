@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Premium E-Commerce Store — Shop 1000+ products across Electronics, Fashion, Home, Sports and more. Best deals and free shipping.">
+  <title>NovaMart — Premium E-Commerce Store</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛍️</text></svg>">
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar-inner">
+      <a href="#" class="navbar-logo" onclick="navigateTo('home'); return false;">
+        <span class="logo-icon">🛍️</span>
+        <span class="gradient-text">NovaMart</span>
+      </a>
+
+      <div class="navbar-search">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="search-input" placeholder="Search 1,000+ products..." autocomplete="off">
+        <div class="search-suggestions" id="search-suggestions"></div>
+      </div>
+
+      <div class="navbar-actions">
+        <button class="nav-btn" id="cart-btn" onclick="toggleCart()" title="Shopping Cart">
+          🛒
+          <span class="badge cart-count" style="display:none;">0</span>
+        </button>
+        <button class="nav-btn" title="Wishlist" onclick="Notify.info('Wishlist coming soon!')">
+          ❤️
+        </button>
+        <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()" title="Toggle Theme">
+          <span class="theme-icon">🌙</span>
+        </button>
+        <button class="nav-user-btn" id="user-btn">
+          <div class="avatar">👤</div>
+          <span class="user-name">Sign In</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main id="app"></main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3 class="gradient-text">🛍️ NovaMart</h3>
+          <p>Your premium destination for quality products. 1,000+ items across 10 categories with free shipping, secure payments, and 24/7 support.</p>
+          <div class="footer-socials" style="margin-top:20px;">
+            <a href="#" title="Twitter">𝕏</a>
+            <a href="#" title="Instagram">📸</a>
+            <a href="#" title="Facebook">📘</a>
+            <a href="#" title="YouTube">▶️</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <a href="#" onclick="navigateTo('category',{id:'electronics'}); return false;">Electronics</a>
+          <a href="#" onclick="navigateTo('category',{id:'fashion'}); return false;">Fashion</a>
+          <a href="#" onclick="navigateTo('category',{id:'home'}); return false;">Home & Kitchen</a>
+          <a href="#" onclick="navigateTo('category',{id:'sports'}); return false;">Sports & Fitness</a>
+          <a href="#" onclick="navigateTo('category',{id:'beauty'}); return false;">Beauty & Care</a>
+        </div>
+        <div class="footer-col">
+          <h4>Categories</h4>
+          <a href="#" onclick="navigateTo('category',{id:'books'}); return false;">Books</a>
+          <a href="#" onclick="navigateTo('category',{id:'toys'}); return false;">Toys & Games</a>
+          <a href="#" onclick="navigateTo('category',{id:'automotive'}); return false;">Automotive</a>
+          <a href="#" onclick="navigateTo('category',{id:'garden'}); return false;">Garden & Outdoor</a>
+          <a href="#" onclick="navigateTo('category',{id:'health'}); return false;">Health & Wellness</a>
+        </div>
+        <div class="footer-col">
+          <h4>Support</h4>
+          <a href="#">Help Center</a>
+          <a href="#">Shipping Policy</a>
+          <a href="#">Returns & Refunds</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 NovaMart. All rights reserved.</span>
+        <span>Made with ❤️ for premium shopping</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== CART SIDEBAR ===== -->
+  <div class="cart-overlay" id="cart-overlay" onclick="toggleCart()"></div>
+  <aside class="cart-sidebar" id="cart-sidebar">
+    <div class="cart-header">
+      <h2>🛒 Shopping Cart</h2>
+      <button onclick="toggleCart()" style="font-size:1.3rem;color:var(--text-muted);">✕</button>
+    </div>
+    <div class="cart-items" id="cart-items"></div>
+    <div id="cart-footer"></div>
+  </aside>
+
+  <!-- ===== AUTH MODAL ===== -->
+  <div class="modal-overlay" id="auth-modal" onclick="if(event.target===this) closeModal();">
+    <div class="modal" style="position:relative;"></div>
+  </div>
+
+  <!-- ===== NOTIFICATIONS ===== -->
+  <div class="notifications-container" id="notifications"></div>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script src="js/exact_products.js?v=3"></script>
+  <script src="js/data.js?v=3"></script>
+  <script src="js/auth.js?v=3"></script>
+  <script src="js/cart.js?v=3"></script>
+  <script src="js/app.js?v=3"></script>
+
+</body>
+</html>
